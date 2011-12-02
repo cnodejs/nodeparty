@@ -5,7 +5,7 @@ var app = connect(
   connect.static(__dirname + '/public'),
   render({
     root: __dirname + '/views',
-    cache: true,
+    cache: false,
   })
 );
 

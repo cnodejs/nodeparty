@@ -58,8 +58,8 @@
         <div id="description"></div> 
     </div> 
     <div id="content">
-    <div style="background: #fff; padding: 20px;">
-    <h1 style="float: left; color: #000; font-size: 50px; margin: 20px;">北京站倒计时：</h1>
+    <div style="background: #eee; padding: 20px;border-radius: 20px;">
+    <h1 style="float: left; color: #000; font-size: 50px; margin: 10px 10px 20px 20px;">北京站倒计时：</h1>
         <div id="counter"></div>
         <div class="desc">
             <div>日</div>
@@ -80,14 +80,17 @@
             <ul>
                 <li>《SuperSonic项目后端开发》陈卓</li>
                 <li>《通过NodeJS开发mobage平台上的手机游戏客户端-Mobage》 吴頔</li>
-                <li>《雪球上的nodeJS》孟详宇</li>
+                <li>《雪球上的nodeJS》孟详宇<a href="http://weibo.com/mengxy">@蒙懵猛孟</a></li>
                 <li>《NodeCombo：基于NodeJS的本地CDN服务的搭建》杨振楠</li>
-                <li>《Nodejs 二三事》@Python发烧友</li>
+                <li>《Nodejs 二三事》<a href="http://weibo.com/imk2">@Python发烧友</a></li>
                 <li>会后聚餐（自愿自费）</li>
             <p>
-                <span>活动地址：</span>北京市朝阳区朝外大街甲6号万通中心D座23层（二环三环之间）
+                <span>活动地址：</span>北京市朝阳区朝外大街甲6号万通中心D座23层（二环三环之间）<br/> at 易宝支付(yeepay.com)
             </p>
             <p>地图：<a href="http://t.cn/S47QfD">http://t.cn/S47QfD</a></p>
+            <p>
+                <a href="http://t.cn/S47QfD"><img src="http://api.map.baidu.com/staticimage?center=%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98&markers=%E6%98%93%E5%AE%9D%E6%94%AF%E4%BB%98&zoom=16&width=250&height=250" /></a>
+            </p>
         </div>
         <div class="event">
             <h2>杭州站</h2>
@@ -106,7 +109,7 @@
                 <span>活动地址：</span>杭州市西湖区塘苗路18号华星现代产业园 淘宝网 7-4凤凰山庄
             </p>
             <p>地图：<a href="http://j.map.baidu.com/u00wc">http://j.map.baidu.com/u00wc</a></p>
-            <div style="width:280px;height:300px;border:#ccc solid 1px;" id="dituContent"></div>
+            <div style="width:250px;height:250px;border:#ccc solid 1px;" id="dituContent"></div>
         </div>
         <div class="event">
             <h2>上海站 Christmas</h2>
@@ -121,6 +124,10 @@
                 <span>活动地址：</span>第九城市(张江高科技园区碧波路690号3号楼)，地铁2号线张江高科站
             </p>
             <p>地图：<a href="http://map.baidu.com/?poiShareUid=68f402659857db00ca1b95c4&cityCode=289&tn=B_NORMAL_MAP">查看地图</a></p>
+            <p>
+            <a href="http://map.baidu.com/?poiShareUid=68f402659857db00ca1b95c4&cityCode=289&tn=B_NORMAL_MAP"><img src="http://api.map.baidu.com/staticimage?center=%E4%B8%8A%E6%B5%B7%E5%B8%82%E6%B5%A6%E4%B8%9C%E6%96%B0%E5%8C%BA%E7%A2%A7%E6%B3%A2%E8%B7%AF690%E5%8F%B7&markers=%E4%B8%8A%E6%B5%B7%E5%B8%82%E6%B5%A6%E4%B8%9C%E6%96%B0%E5%8C%BA%E7%A2%A7%E6%B3%A2%E8%B7%AF690%E5%8F%B7&zoom=16&width=250&height=250" />
+            </a>
+            </p>
         </div>
         <div class="event">
             <h2>深圳站</h2>
@@ -180,7 +187,7 @@
     
     //标注点数组
     var markerArr = [{title:"华星现代产业园",content:"杭州市西湖区塘苗路18号华星现代产业园&nbsp;淘宝网&nbsp;7-4凤凰山庄",point:"120.128036|30.280835",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
-         ];
+    ];
     //创建marker
     function addMarker(){
         for(var i=0;i<markerArr.length;i++){
