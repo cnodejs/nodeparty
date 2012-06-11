@@ -1,6 +1,11 @@
 {
-  "name": "nodeparty",
-  "description": "About Node Party in cnodejs.org",
-  "main": "app.js",
-  "author": "MK2<fengmk2@gmail.com>"
+"name": "nodeparty",
+"description": "About Node Party in cnodejs.org",
+"main": "app.js",
+"author": "MK2<fengmk2@gmail.com>",
+"version": "0.0.4",
+"engine":{
+  "node":">=0.6"
+},
+"license":"MIT"
 }

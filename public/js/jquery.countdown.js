@@ -14,6 +14,7 @@ jQuery.fn.countdown = function(userOptions)
     // also you cannot specify a format unordered (e.g. hh:ss:mm is wrong)
     format: "dd:hh:mm:ss",
     startTime: "01:12:32:55",
+    endtime: null,
     digitImages: 6,
     digitWidth: 53,
     digitHeight: 77,
@@ -21,10 +22,37 @@ jQuery.fn.countdown = function(userOptions)
     image: "digits.png"
   };
   var digits = [], interval;
-
   // Draw digits in given container
+  
+  //hack by kennyz
   var createDigits = function(where) 
   {
+    if(options.endtime!=null) {
+        var enddate = new Date(parseInt(options.endtime));
+        var diff = (enddate - new Date()) / 1000;
+        var days = Math.floor(diff / 3600 / 24);
+        diff -= days * 3600 * 24;
+        var hours = Math.floor(diff / 3600);
+        diff -= hours * 3600;
+        var minutes = Math.floor(diff / 60);
+        diff -= minutes * 60;
+        var seconds = Math.floor(diff);
+        if(days < 10) {
+          days = '0' + days;
+        }
+        if(hours < 10) {
+          hours = '0' + hours;
+        }
+        if(minutes < 10) {
+          minutes = '0' + minutes;
+        }
+        if(seconds < 10) {
+          seconds = '0' + seconds;
+        }
+        options.startTime = days + ':' + hours + ':' + minutes + ':' + seconds;
+        console.log(options.startTime);
+    }
+    
     var c = 0;
     // Iterate each startTime digit, if it is not a digit
     // we'll asume that it's a separator
@@ -61,7 +89,6 @@ jQuery.fn.countdown = function(userOptions)
       else 
         elem = $('<div class="cntSeparator"/>').css({float: 'left'})
                 .text(options.startTime[i]);
-
       where.append(elem)
     }
   };
@@ -71,10 +98,8 @@ jQuery.fn.countdown = function(userOptions)
   {
     if (val !== undefined)
       return digits[elem].css({'marginTop': val + 'px'});
-
     return parseInt(digits[elem].css('marginTop').replace('px', ''));
   };
-
   // Makes the movement. This is done by "digitImages" steps.
   var moveStep = function(elem) 
   {
@@ -96,15 +121,12 @@ jQuery.fn.countdown = function(userOptions)
           margin(elem, -(digits[elem].__condmax * options.digitHeight * options.digitImages));
         return;
       }
-
       margin(elem, mtop);
       if (margin(elem) / options.digitHeight % options.digitImages != 0)
         setTimeout(_move, options.stepTime);
-
       if (mtop == 0) digits[elem].__ismax = true;
     }
   };
-
   $.extend(options, userOptions);
   this.css({height: options.digitHeight, overflow: 'hidden'});
   createDigits(this);
