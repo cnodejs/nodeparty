@@ -12,7 +12,7 @@ function site(app) {
     //changed by kennyz
     res.render('index.html', {
       layout: false,
-      endtime: new Date('2012-06-09 00:00:00').getTime()
+      endtime: new Date('2012-06-30 00:00:00').getTime()
     });
     
   });
